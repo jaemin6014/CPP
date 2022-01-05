@@ -60,7 +60,7 @@ int point::sum()
 }
 
 
-int main()
+void main()
 {
 	/*std::stack<int> stk;
 	stk.push(1);
@@ -85,18 +85,12 @@ int main()
 
 	//stack = (FILO)  queue = (FIFO)
 	
-	
 	//point A(1.4,2.8); // 객체 object
 
 	/*A.x(4);
 	A.y(3);*/
 
 	//std::cout << A.sum(); 
-
-
-
-	return 0;
-
 }
 	/*char sum;
 	char sum1;
