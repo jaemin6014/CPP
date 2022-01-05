@@ -1,0 +1,186 @@
+#include <iostream>
+#include <stack>
+#include <queue>
+#include <stdio.h>
+
+
+//template <typename T>
+//T sum(T a, T b)
+//{
+//	return (a + b);
+//}
+
+//int float double = templatee  
+
+/*void fun(int b)
+{
+	std::cout << "number :" << b << std::endl;
+}*/
+
+
+class point // 사용자 정의형 데이터 타입
+{
+	//private: or protected:
+	//int x; //멤버 변수 member variable 
+	//int y; // ""
+	
+private:
+	int x;
+	int y;
+
+public:
+	point(); // 생성자 constructor => 자동 호출
+	point(int a, int b); // 생성자 constructor => 자동 호출
+
+	void setX(int a) {x = a;}
+	void setY(int b) {y = b;}
+
+	int sum(); //멤버 함수
+	
+};
+
+point::point() // 생성자 constructor => 자동 호출
+{
+	x = 0;
+	y = 0;
+	std::cout << "생성자 point() 호출" << std::endl;
+}
+
+point::point(int a, int b) // 생성자 constructor => 자동 호출
+{
+	x = a;
+	y = b;
+	std::cout << "생성자 point() 호출" << std::endl;
+}
+
+
+int point::sum()
+{
+	return (x + y);
+}
+
+
+int main()
+{
+	/*std::stack<int> stk;
+	stk.push(1);
+	stk.push(2);
+
+	while (!stk.empty())
+	{
+		std::cout << stk.top() << std::endl;
+		stk.pop();
+	}*/
+
+	std::queue<int> que;
+	que.push(1);
+	que.push(2);
+
+	while (!que.empty())
+	{
+		std::cout << que.front() << std::endl;
+		que.pop();
+	}
+
+
+	//stack = (FILO)  queue = (FIFO)
+	
+	
+	//point A(1.4,2.8); // 객체 object
+
+	/*A.x(4);
+	A.y(3);*/
+
+	//std::cout << A.sum(); 
+
+
+
+	return 0;
+
+}
+	/*char sum;
+	char sum1;
+	char sum2;
+
+	sum = 'a';
+	sum1 = 'b';
+	sum2 = 'c';
+
+	for (int i= 0;  i < 10; i++)
+	{
+		if (i == 7)
+		{
+			continue;
+
+		}
+		std::cout << i << std::endl;
+	}
+
+	std::cout << "sum = " << sum << std::endl;
+	std::cout << "&sum = " << &sum << std::endl;
+	std::cout << "&sum1 = " << &sum1 << std::endl;
+	std::cout << "&sum2 = " << &sum2 << std::endl;
+
+	printf("sum = %p\n", &sum);
+	printf("sum1 = %p\n", &sum1);
+	printf("sum2 = %p\n", &sum2);
+	*/
+	/*
+	char *p;
+
+	p = &sum;
+
+	std::cout << "*p = " << *p << std::endl;
+	std::cout << "p = " << p << std::endl;
+	
+
+
+	fun(3);
+
+
+	std::cout << fun;
+	
+	*/
+
+	//double n[10];
+	//double* ptr = NULL;
+
+	//ptr = n;
+
+	//int*ptr = new int[10];
+	//ptr - (int*)malloc(sizeof(int) * 10);
+
+
+
+
+
+	/*std::cout << &n[0] << std::endl;
+	std::cout << ptr << std::endl;*/
+
+	/*for (int i = 0; i < 10; i++)
+	{
+		if (i % 2 == 0)
+		{
+			*(ptr + i) = 2; // n[i] = 2 ; *(ptr+i) =2;
+		}
+		else
+		{
+			*(ptr + i) = 1; // n[i] = 1; *(ptr +i) = 1;
+		}
+	}*/
+
+	//std::cout << &n[1] << std::endl;
+	//std::cout << ptr << std::endl;
+
+	/*for (int i = 0; i < 10; i++)
+	{
+		//std::cout << *(ptr + i) << std::endl;
+		std::cout << (ptr + i) << std::endl;
+	}*/
+
+	//delete [] ptr;
+
+	//free(ptr);
+
+
+	
