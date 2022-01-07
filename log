@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+	int a;
+	int b;
+	int res;
+	int temp;
+	int i=0;
+
+	cout << "num a = ";
+	cin >> a;
+
+	cout << "num b = ";
+	cin >> b;
+
+	temp = a;
+	res = 1;
+
+	while (i == 0 )
+	{
+
+		if (b % 2 == 1)
+		{
+			res = res * temp;
+			temp = temp * temp;
+			if (b == 1)
+			{
+				cout << "a to the b is " << res;
+				break;
+			}
+			b = (b - 1) / 2;
+		}
+		else
+		{
+			b = b / 2;
+			temp = temp * temp;
+		}
+	}
+
+	return 0;
+}
