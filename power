@@ -1,0 +1,77 @@
+#include <iostream>
+#include <chrono>
+
+using namespace std;
+
+int power_log_time(int a, int b);
+int power_linear_time(int a, int b);
+
+int main()
+{
+	int a;
+	int b;
+
+	cout << "num a = ";
+	cin >> a;
+
+	cout << "num b = ";
+	cin >> b;
+
+	auto start = chrono::steady_clock::now();
+
+	cout << "log a to the b is " << power_log_time(a, b) << endl;
+
+	auto end = chrono::steady_clock::now();
+	chrono::duration<double> elapsed_seconds = end - start;
+	cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
+
+	start = chrono::steady_clock::now();
+
+	cout << "linear a to the b is " << power_linear_time(a, b) << endl;
+
+	end = chrono::steady_clock::now();
+	elapsed_seconds = end - start;
+	cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
+
+
+	return 0;
+}
+
+/*
+이 함수는 지수법칙을 이용한 함수이다.
+a는 밑으로 들어가고 b는 지수로 들어간다.
+함수의 변화값은 a^b
+참고 : a와 b는 0과 자연수 일때만 가능하다. 음수는 나중에 고려.
+*/
+int power_log_time(int a, int b)
+{
+	int res;
+	int temp;
+
+	temp = a;
+	res = 1;
+
+	while ( b > 0 )
+	{
+		if (b % 2 == 1)
+		{
+			res = res * temp;
+		}
+		b = b / 2;
+		temp = temp * temp;
+	}
+
+	return res;
+}
+
+int power_linear_time(int a, int b)
+{
+	int res= 1;
+
+	for (int i = b; i > 0; i--)
+	{
+		res = res * a;
+	}
+
+	return res;
+}
