@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+int prime_number_plus(int a);
+
+int main()
+{
+	int a;
+	// int b;
+
+	cout << "num a = ";
+	cin >> a;
+  
+  prime_number_plus(a);
+    
+	return 0;
+}
+
+int prime_number_plus(int a)
+{
+	int number = a;
+	int res = 0;
+
+	if (number == 2)
+	{
+		cout << a << " is a prime number";
+		res = 1;
+		return res;
+	}
+
+	for (int i = 2; i*i <= number; i++ )
+	{
+		if (number % i == 0)
+		{
+			cout << a << " is not a prime number";
+			return res;
+		}
+	}
+
+	cout << a << " is a prime number";
+	res = 1;
+	return res;
+}
