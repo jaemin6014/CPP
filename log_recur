@@ -1,4 +1,4 @@
-#include <cstdlib>
+#include <iostream>
 
 using namespace std;
 
@@ -8,12 +8,12 @@ int log_recur(int a, int b, int temp);
 int main()
 {
 	int a;
-  int b;
+ 	int b;
   
-  cout << "num a = ";
+  	cout << "num a = ";
 	cin >> a;
  
-  cout << "num b = ";
+ 	cout << "num b = ";
 	cin >> b;
  
 	//cout << "recursive a to the b is " << recul(a, b) << endl;
