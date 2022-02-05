@@ -15,7 +15,9 @@ int main()
   
   //cout << "sum of square = " << sum_of_square(a) << endl;
 
-	//happy_number_2(a);
+  //happy_number_2(a);
+  
+  //cout << "0 = happy number, 1 = not happy number : " << happy_number(a) << endl;
   
   return 0;
 }
