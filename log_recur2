@@ -1,0 +1,46 @@
+#include <cstdlib>
+
+using namespace std;
+
+int log_recur(int a, int b, int temp);
+
+
+int main()
+{
+	int a;
+  int b;
+  
+  cout << "num a = ";
+	cin >> a;
+ 
+  cout << "num b = ";
+	cin >> b;
+ 
+	//cout << "recursive a to the b is " << recul(a, b) << endl;
+
+	//cout << "recursive log a to the b is " << log_recur(a, b, a) << endl;
+
+	return 0;
+}
+
+int log_recur(int a, int b, int temp)
+{
+	if (b == 0)
+	{
+		return 1;
+	}
+
+	int res = 1;
+
+	int next_temp = temp * temp;
+	int times = 1;
+
+	if (b % 2 == 1)
+	{
+		times = temp;
+	}
+
+	res = log_recur(a, b / 2, next_temp) * times;
+
+	return res;
+}
