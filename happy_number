@@ -1,0 +1,99 @@
+#include <iostream>
+
+using namespace std;
+
+int happy_number(int a);
+int sum_of_square(int n);
+int happy_number_2(int a);
+
+int main()
+{
+  int a;
+
+  cout << "num a = ";
+	cin >> a;
+  
+  //cout << "sum of square = " << sum_of_square(a) << endl;
+
+	//happy_number_2(a);
+  
+  return 0;
+}
+
+int happy_number(int a)
+{
+	int b = 0;
+	int i = 0;
+
+	while (true)
+	{
+		i = i + 1;
+		if (a == 1 && b == 0)
+		{
+			return 0;
+		}
+
+		if (a / 10 == 0)
+		{
+			a = b + (a * a);
+			b = 0;
+			//cout << " = " << a << endl;
+		}
+		else
+		{
+			b = b + ((a % 10) * (a % 10));
+			//cout << a / 10 << "^2 + " << a % 10 << "^2";
+			a = a / 10;
+		}
+
+		if (i > 10000)
+		{
+			cout << "횟수가 " << i << " 번이 넘습니다" << endl;
+			return 1;
+		}
+	}
+}
+
+int sum_of_square(int n)
+{
+	int number = n;
+	int last_digit;
+	int res = 0;
+
+	while (number > 0)
+	{
+		last_digit = number % 10;
+		res += last_digit * last_digit; //res = res + last_digit * last_digit;
+
+		number /= 10; // number = number / 10;
+	}
+
+	return res;
+}
+
+int happy_number_2(int a)
+{
+	int number = a;
+	int res = 1;
+	int i = 1;
+
+	while (i < 10000)
+	{
+		number = sum_of_square(number);
+
+		if (number == 1)
+		{
+			res = 0;
+			break;
+		}
+
+		i++;
+	}
+
+	if (res == 0)
+		cout << a << " is happy number" << endl;
+	else
+		cout << a << " is not a happy number" << endl;
+
+	return res;
+}
