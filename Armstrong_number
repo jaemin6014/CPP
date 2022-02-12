@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std;
+
+int is_Armstrong_number(int N);
+
+int main()
+{
+	int N;
+
+	cout << "num N = ";
+	cin >> N;
+
+	for (int i = 1; i <= N; i++)
+	{
+		if (is_Armstrong_number(i) == 1)
+		{
+			cout << i << " is a Armstrong number" << endl;
+		}
+	}
+
+	return 0;
+}
+
+int is_Armstrong_number(int N) {
+	
+	int b;
+	int c = 0;
+	int num = N;
+	int res = 0;
+
+	while (num > 0)
+	{
+		b = num % 10;
+		c = c + b * b * b;
+		num = num / 10;
+	}
+		
+	if ( c == N )
+	{
+		res = 1;
+	}
+
+	return res;
+}
