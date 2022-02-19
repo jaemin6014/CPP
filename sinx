@@ -1,0 +1,73 @@
+#include <iostream>
+
+using namespace std;
+
+float compute_term(float x, int i);
+float power_log_time(float a, int b);
+template <typename T>
+int factorial(T number);
+
+int main()
+{
+	float x;
+	int n;
+	float result = 0;
+	std::cout << "Enter the value of x: ";
+	std::cin >> x;
+	std::cout << "Enter the value of n: ";
+	std::cin >> n;
+
+	// Your code to compute sin(x)
+	// sin(x) = x - x3/3! + x5/5! - x7/7!+x9/9! ...
+
+	for (int i = 1; i <= n; i++)
+	{
+		result = result + compute_term(x, i);
+	}
+
+	cout << result << endl;
+	return 0;
+}
+
+float compute_term(float x, int i) 
+{
+	// for example, i=3, return x5/5!
+	float res = 0.0;
+
+	float radian = x * 3.141592 / 180;
+
+	res = power_log_time(-1, i + 1) * power_log_time(radian, 2*i -1) / factorial(2*i - 1);
+
+	return res;
+}
+
+float power_log_time(float a, int b)
+{
+	float res;
+	float temp;
+
+	temp = a;
+	res = 1;
+
+	while (b > 0)
+	{
+		if (b % 2 == 1)
+		{
+			res = res * temp;
+		}
+		b = b / 2;
+		temp = temp * temp;
+	}
+
+	return res;
+}
+
+template <typename T>
+int factorial(T number)
+{
+	T result;
+	if (number <= 1) return 1;
+	result = number * factorial(number - 1);
+
+	return result;
+}
