@@ -8,10 +8,10 @@ bool is_palindrome_v2(vector<char>& array);
 
 int main()
 {
-	vector<char>array = { 'a', 'b', 'c' };
+	vector<char>array = { 'a', 'b', 'd', 'a' };
 	cout << is_palindrome_v1(array) << endl;
 	cout << is_palindrome_v2(array) << endl;
-	
+
 	return 0;
 }
 
@@ -24,13 +24,32 @@ bool is_palindrome_v1(vector<char>& array)
 		if (array[i] != array[array.size() - i - 1])
 		{
 			res = false;
+			break;
 		}
 	}
 
 	return res;
 }
 
-bool is_palindrome_v2(std::vector<char>& array) 
+bool is_palindrome_v2(std::vector<char>& array)
 {
-	return true;
+	bool res = true;
+
+	if (array.size() <= 1)
+	{
+		return res;
+	}
+
+	if (array[0] != array[array.size() - 1])
+	{
+		res = false;
+	}
+	else
+	{
+		array.erase(array.begin());
+		array.erase(array.begin() + array.size() - 1);
+		res = is_palindrome_v2(array);
+	}
+	
+	return res;
 }
